@@ -39,14 +39,17 @@ export async function getManifest() {
       'storage',
       'activeTab',
     ],
-    host_permissions: ['*://*/*'],
+    host_permissions: ['*://*.xiaohongshu.com/*'],
     content_scripts: [
       {
         matches: [
-          '<all_urls>',
+          '*://www.xiaohongshu.com/*',
         ],
         js: [
           'dist/contentScripts/index.global.js',
+        ],
+        css: [
+          'dist/contentScripts/style.css',
         ],
       },
     ],

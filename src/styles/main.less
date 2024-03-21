@@ -1,0 +1,83 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --side-bar-width: 50px;
+}
+
+.mask-paper > a{
+  display: none !important;
+}
+#link-guide{
+  display: none !important;
+}
+.dropdown-nav{
+  opacity: 0 !important;
+  position: fixed !important;
+  top: 12px !important;
+  right: 12px !important;
+  transform: all 0.3s !important;
+  &:hover{
+    opacity: 1 !important;
+  }
+}
+
+.side-bar{
+  width: var(--side-bar-width) !important;
+  z-index: 10000000 !important;
+}
+.with-side-bar{
+  padding-left: calc(var(--side-bar-width) + 100px) !important;
+}
+.channel-list > li,
+.link-wrapper {
+  display: flex;
+  padding: 0 !important;
+  justify-content: center;
+  align-items: center;
+  &  a{
+    height: auto !important;
+    width: auto !important;
+  }
+}
+.channel-list .channel {
+  display: none !important;
+}
+.information-pad{
+  position: fixed !important;
+  // 全屏居中
+  top: 30% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 700px !important;
+  height: 300px !important;
+}
+// .channel-container{
+//   position: fixed !important;
+//   top: 72px !important;
+//   left: var(--side-bar-width) !important;
+// }
+
+.feeds-container{
+  --item-width: calc(100% / 8 );
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+  
+}
+
+.main-content{
+  // 加上fadeIn 动画
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
