@@ -75,5 +75,8 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "dependencies": {
+    "pinia": "^2.1.7"
   }
 }
