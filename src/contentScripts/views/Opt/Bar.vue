@@ -2,7 +2,7 @@
 import { useSettingData } from '~/pinia/index'
 
 const store = useSettingData()
-
+// 主题
 function toggleDark() {
   store.setting.isDarkMode = !store.setting.isDarkMode
 }
@@ -16,6 +16,15 @@ watch(() => store.setting.isDarkMode, (val) => {
     document.documentElement.removeAttribute('dark')
   }
 }, { immediate: true })
+// 路由
+function handleRouter(path) {
+  const url = window.location.href
+  // 替换当前页面
+  if (url.includes(path))
+    return
+  // TODO: 这里会导致页面刷新，需要优化
+  window.location.href = `https://www.xiaohongshu.com/${path}`
+}
 </script>
 
 <template>
@@ -33,6 +42,14 @@ watch(() => store.setting.isDarkMode, (val) => {
       class="dock-content"
       p-2
     >
+      <div class="dock-item">
+        <a href="/explore">
+          <div class="i-mingcute:home-4-line w-1em h-1em" />
+        </a>
+      </div>
+      <div class="dock-item" @click="handleRouter('notification')">
+        <div class="i-mingcute:notification-line w-1em h-1em" />
+      </div>
       <div
         class="dock-item"
         @click="toggleDark"
