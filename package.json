@@ -39,6 +39,7 @@
     "@types/node": "^20.11.26",
     "@types/webextension-polyfill": "^0.10.7",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@unocss/preset-mini": "^0.58.6",
     "@unocss/reset": "^0.58.5",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/compiler-sfc": "^3.4.21",
@@ -77,6 +78,7 @@
     "*": "eslint --fix"
   },
   "dependencies": {
+    "@unocss/preset-wind": "^0.58.6",
     "pinia": "^2.1.7"
   }
 }

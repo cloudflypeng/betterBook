@@ -25,6 +25,9 @@ function handleRouter(path) {
   // TODO: 这里会导致页面刷新，需要优化
   window.location.href = `https://www.xiaohongshu.com/${path}`
 }
+function showSetting() {
+  store.setting.showSettingPanel = true
+}
 </script>
 
 <template>
@@ -67,7 +70,7 @@ function handleRouter(path) {
           </div>
         </Transition>
       </div>
-      <div class="dock-item">
+      <div class="dock-item" @click="showSetting">
         <mingcute:settings-3-line />
       </div>
     </div>
